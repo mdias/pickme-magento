@@ -178,6 +178,7 @@
 				<title>Chronopost PickMe</title>
 				<name></name>
 				<price_overcost>0</price_overcost>
+				<https_cert_validation>0</https_cert_validation>
 			</pickme>
 		</carriers>
 	</default>

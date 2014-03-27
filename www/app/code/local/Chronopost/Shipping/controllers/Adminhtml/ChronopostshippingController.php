@@ -8,14 +8,15 @@ extends Mage_Adminhtml_Controller_Action
 
 		try {
 			$url_ws = $this->getRequest()->getParam('url_ws');
+			$check_https_cert = $this->getRequest()->getParam('check_https_cert', true);
 
 			if ($url_ws != "") {
 
 				$context = stream_context_create(
 					array(
 						'ssl' => array(
-							'verify_peer' => false,
-							'allow_self_signed' => true
+							'verify_peer' => $check_https_cert ? true : false,
+							'allow_self_signed' => $check_https_cert ? false : true
 						)
 					)
 				);
